@@ -12,7 +12,7 @@ namespace PeakService.IntegrationTests.Ingestion;
 
 public sealed class WikidataPeakSourceClientTests
 {
-    private const string UserAgent = "PeakerIngestionTests/1.0";
+    private const string UserAgent = "AscendaIngestionTests/1.0";
 
     private const string OnePeak =
         """

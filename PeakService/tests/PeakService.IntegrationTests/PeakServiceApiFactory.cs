@@ -23,14 +23,14 @@ namespace PeakService.IntegrationTests;
 public sealed class PeakServiceApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
     private readonly PostgreSqlContainer _postgres = new PostgreSqlBuilder("postgis/postgis:16-3.4")
-        .WithDatabase("peaker_peaks")
-        .WithUsername("peaker")
-        .WithPassword("peaker")
+        .WithDatabase("ascenda_peaks")
+        .WithUsername("ascenda")
+        .WithPassword("ascenda")
         .Build();
 
     private readonly RabbitMqContainer _rabbitMq = new RabbitMqBuilder("rabbitmq:4.3.3-management-alpine")
-        .WithUsername("peaker")
-        .WithPassword("peaker")
+        .WithUsername("ascenda")
+        .WithPassword("ascenda")
         .Build();
 
     private IHost? _ingestionHost;
@@ -127,13 +127,13 @@ public sealed class PeakServiceApiFactory : WebApplicationFactory<Program>, IAsy
         ["ConnectionStrings:PeakDatabase"] = _postgres.GetConnectionString(),
         ["Messaging:Host"] = _rabbitMq.Hostname,
         ["Messaging:Port"] = _rabbitMq.GetMappedPublicPort(5672).ToString(CultureInfo.InvariantCulture),
-        ["Messaging:Username"] = "peaker",
-        ["Messaging:Password"] = "peaker",
+        ["Messaging:Username"] = "ascenda",
+        ["Messaging:Password"] = "ascenda",
         ["Messaging:VirtualHost"] = "/",
         ["Outbox:PollingInterval"] = "00:00:01",
         ["Outbox:RetryBackoffBase"] = "00:00:01",
         ["Outbox:RetryBackoffCap"] = "00:00:01",
         ["Ingestion:Endpoint"] = "https://query.wikidata.org/sparql",
-        ["Ingestion:UserAgent"] = "PeakerIngestionTests/1.0 (tests)"
+        ["Ingestion:UserAgent"] = "AscendaIngestionTests/1.0 (tests)"
     };
 }
