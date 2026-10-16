@@ -8,7 +8,7 @@ internal sealed class PeakDbContextFactory : IDesignTimeDbContextFactory<PeakDbC
     private const string ConnectionStringVariable = "ConnectionStrings__PeakDatabase";
 
     private const string ModelOnlyConnectionString =
-        "Server=localhost;Port=5433;Database=peaker_peaks";
+        "Server=localhost;Port=5433;Database=ascenda_peaks";
 
     public PeakDbContext CreateDbContext(string[] args)
     {

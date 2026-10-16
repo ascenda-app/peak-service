@@ -1,7 +1,7 @@
 # peak-service
 
 Catálogo mundial de montañas y consultas geoespaciales. PostgreSQL 16 + PostGIS
-(`peaker_peaks`). Ver `.claude/docs/DESIGN.md` §6.
+(`ascenda_peaks`). Ver `.claude/docs/DESIGN.md` §6.
 
 ## Puesta en marcha local
 

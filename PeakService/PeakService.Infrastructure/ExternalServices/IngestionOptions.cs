@@ -13,7 +13,7 @@ public sealed class IngestionOptions : IValidatableObject
     public Uri CommonsApiEndpoint { get; init; } = new("https://commons.wikimedia.org/w/api.php");
 
     [Required]
-    public string UserAgent { get; init; } = "PeakerIngestion/1.0 (https://github.com/peaker-app)";
+    public string UserAgent { get; init; } = "AscendaIngestion/1.0 (https://github.com/ascenda-app)";
 
     public TimeSpan DelayBetweenRequests { get; init; } = TimeSpan.FromSeconds(2);
 
